@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#090909">
-<title>HYROX GAMES 2027 | CrossFit Araçatuba</title>
-<meta name="description" content="HYROX GAMES 2027. Um desafio de força, resistência e superação no CrossFit Araçatuba.">
+<title>HYROX GAMES 2027 | Araçatuba</title>
+<meta name="description" content="HYROX GAMES 2027. Uma experiência de força, resistência e superação em Araçatuba, SP.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,665 +14,643 @@
 
 <style>
 :root {
-  --yellow: #eaff00;
-  --black: #090909;
-  --dark: #111111;
-  --gray: #999999;
-  --white: #f7f7f3;
+  --yellow:#eaff00;
+  --black:#090909;
+  --dark:#111;
+  --gray:#999;
+  --white:#f7f7f3;
+  --line:#ffffff20;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:Inter,sans-serif;
+  overflow-x:hidden;
 }
-
-html {
-  scroll-behavior: smooth;
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+.container{width:min(1180px,90%);margin:auto}
+section{padding:105px 0}
+.section-label{
+  color:var(--yellow);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  margin-bottom:18px;
 }
-
-body {
-  background: var(--black);
-  color: var(--white);
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
+.section-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(48px,7vw,82px);
+  font-weight:900;
+  line-height:.92;
+  text-transform:uppercase;
 }
-
-a {
-  text-decoration: none;
-  color: inherit;
+.section-title span{color:var(--yellow)}
+.section-text{
+  color:var(--gray);
+  font-size:14px;
+  line-height:1.9;
+  max-width:600px;
+  margin-top:22px;
 }
+.center{text-align:center}
+.center .section-text{margin-left:auto;margin-right:auto}
 
-button {
-  font-family: inherit;
+.btn{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  padding:17px 25px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  transition:.3s;
+  border:1px solid transparent;
+  cursor:pointer;
 }
+.btn-primary{background:var(--yellow);color:#080808}
+.btn-primary:hover{background:white;transform:translateY(-3px)}
+.btn-outline{border-color:#ffffff55;color:white}
+.btn-outline:hover{border-color:var(--yellow);color:var(--yellow)}
+.btn-dark{background:#090909;color:white}
+.btn-dark:hover{background:#333}
 
-.container {
-  width: min(1180px, 90%);
-  margin: auto;
+/* HEADER */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:100;
+  background:#090909ed;
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--line);
 }
-
-/* NAVIGATION */
-
-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-  border-bottom: 1px solid #ffffff18;
+.navbar{
+  height:82px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
-
-.navbar {
-  height: 85px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.logo{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:27px;
+  font-weight:900;
+  line-height:.85;
 }
-
-.logo {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 27px;
-  font-weight: 900;
-  letter-spacing: -1px;
-  line-height: .85;
+.logo span{
+  display:block;
+  color:var(--yellow);
+  font-size:10px;
+  letter-spacing:4px;
+  margin-top:7px;
 }
-
-.logo span {
-  display: block;
-  color: var(--yellow);
-  font-size: 11px;
-  letter-spacing: 4px;
-  margin-top: 7px;
+.nav-links{
+  display:flex;
+  gap:23px;
+  align-items:center;
 }
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.nav-links a{
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  transition:.3s;
 }
-
-.nav-links a:hover {
-  color: var(--yellow);
+.nav-links a:hover{color:var(--yellow)}
+.nav-button{
+  background:var(--yellow);
+  color:#080808;
+  padding:13px 18px;
+  font-size:10px;
+  font-weight:900;
+  text-transform:uppercase;
 }
-
-.nav-button {
-  background: var(--yellow);
-  color: #080808;
-  padding: 13px 21px;
-  font-weight: 900;
-  font-size: 11px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.menu-toggle{
+  display:none;
+  background:none;
+  border:0;
+  color:white;
+  font-size:27px;
+  cursor:pointer;
 }
 
 /* HERO */
 
-.hero {
-  min-height: 760px;
-  height: 100vh;
-  max-height: 950px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+.hero{
+  min-height:780px;
+  height:100vh;
+  max-height:950px;
+  position:relative;
+  display:flex;
+  align-items:center;
   background:
-    linear-gradient(90deg, #050505 0%, #050505e8 45%, #05050565 100%),
+    linear-gradient(90deg,#050505 0%,#050505e8 45%,#05050555 100%),
     url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=85')
     center/cover no-repeat;
 }
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg, var(--black), transparent 30%);
-  pointer-events: none;
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,var(--black),transparent 35%);
 }
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  padding-top: 80px;
+.hero-content{position:relative;z-index:2;padding-top:65px}
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--yellow);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  margin-bottom:25px;
 }
-
-.eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--yellow);
-  text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 4px;
-  font-weight: 800;
-  margin-bottom: 25px;
+.eyebrow:before{
+  content:"";
+  width:32px;
+  height:2px;
+  background:var(--yellow);
 }
-
-.eyebrow::before {
-  content: "";
-  width: 32px;
-  height: 2px;
-  background: var(--yellow);
+.hero h1{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(90px,15vw,190px);
+  font-weight:900;
+  line-height:.76;
+  letter-spacing:-5px;
 }
-
-.hero h1 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(90px, 15vw, 190px);
-  font-weight: 900;
-  line-height: .76;
-  letter-spacing: -5px;
-  text-transform: uppercase;
+.hero h1 span{display:block;color:var(--yellow)}
+.hero-subtitle{
+  max-width:460px;
+  margin-top:32px;
+  color:#ccc;
+  font-size:14px;
+  line-height:1.8;
 }
-
-.hero h1 span {
-  display: block;
-  color: var(--yellow);
-}
-
-.hero-subtitle {
-  max-width: 460px;
-  margin-top: 32px;
-  color: #cccccc;
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-top: 35px;
-}
-
-.btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 17px 27px;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: .3s;
-  cursor: pointer;
-  border: 1px solid transparent;
-}
-
-.btn-primary {
-  background: var(--yellow);
-  color: #080808;
-}
-
-.btn-primary:hover {
-  background: white;
-  transform: translateY(-3px);
-}
-
-.btn-outline {
-  border-color: #ffffff55;
-  color: white;
-}
-
-.btn-outline:hover {
-  border-color: var(--yellow);
-  color: var(--yellow);
-}
-
-.hero-bottom {
-  position: absolute;
-  bottom: 45px;
-  left: 5%;
-  right: 5%;
-  z-index: 3;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #aaa;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-/* SECTION GENERAL */
-
-section {
-  padding: 110px 0;
-}
-
-.section-label {
-  color: var(--yellow);
-  text-transform: uppercase;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 4px;
-  margin-bottom: 18px;
-}
-
-.section-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(48px, 7vw, 82px);
-  line-height: .92;
-  text-transform: uppercase;
-  font-weight: 900;
-}
-
-.section-title span {
-  color: var(--yellow);
-}
-
-.section-text {
-  color: var(--gray);
-  font-size: 14px;
-  line-height: 1.9;
-  max-width: 570px;
-  margin-top: 22px;
+.hero-buttons{display:flex;gap:15px;flex-wrap:wrap;margin-top:35px}
+.hero-bottom{
+  position:absolute;
+  bottom:38px;
+  left:5%;
+  right:5%;
+  z-index:3;
+  display:flex;
+  justify-content:space-between;
+  color:#aaa;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
 }
 
 /* ABOUT */
 
-.about {
-  background: #101010;
+.about{background:#101010}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:75px;
+  align-items:center;
 }
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.about-image {
-  min-height: 480px;
-  position: relative;
+.about-image{
+  min-height:480px;
+  position:relative;
   background:
-    linear-gradient(0deg, #0009, transparent),
+    linear-gradient(0deg,#0009,transparent),
     url('https://images.unsplash.com/photo-1534258936925-c58bed479fcb?auto=format&fit=crop&w=1100&q=85')
     center/cover;
 }
-
-.image-tag {
-  position: absolute;
-  bottom: 25px;
-  left: 25px;
-  background: var(--yellow);
-  color: black;
-  padding: 15px 20px;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 24px;
-  font-weight: 900;
-  text-transform: uppercase;
+.image-tag{
+  position:absolute;
+  bottom:25px;
+  left:25px;
+  background:var(--yellow);
+  color:#000;
+  padding:15px 20px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:24px;
+  font-weight:900;
+  text-transform:uppercase;
 }
 
 /* HIGHLIGHTS */
 
-.highlights {
-  background: var(--yellow);
-  color: #080808;
-  padding: 35px 0;
+.highlights{background:var(--yellow);color:#080808;padding:35px 0}
+.highlights-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  text-align:center;
+}
+.highlight-item strong{
+  display:block;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:35px;
+}
+.highlight-item span{
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
 }
 
-.highlights-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  text-align: center;
+/* CARDS */
+
+.categories{background:var(--black)}
+.center-heading{text-align:center;margin-bottom:55px}
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
 }
-
-.highlight-item strong {
-  display: block;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 35px;
-  text-transform: uppercase;
+.category-card{
+  border:1px solid var(--line);
+  background:#111;
+  padding:35px 28px;
+  min-height:235px;
+  transition:.3s;
 }
-
-.highlight-item span {
-  font-size: 10px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+.category-card:hover{
+  border-color:var(--yellow);
+  transform:translateY(-6px);
 }
-
-/* CATEGORIES */
-
-.categories {
-  background: var(--black);
+.category-number{
+  color:var(--yellow);
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:38px;
+  font-weight:900;
 }
-
-.center-heading {
-  text-align: center;
-  margin-bottom: 55px;
+.category-card h3{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:32px;
+  text-transform:uppercase;
+  margin-top:22px;
 }
-
-.center-heading .section-text {
-  margin-left: auto;
-  margin-right: auto;
+.category-card p{
+  font-size:12px;
+  color:var(--gray);
+  line-height:1.8;
+  margin-top:12px;
 }
-
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.category-card {
-  border: 1px solid #ffffff20;
-  background: #111;
-  padding: 35px 28px;
-  min-height: 240px;
-  transition: .3s;
-}
-
-.category-card:hover {
-  border-color: var(--yellow);
-  transform: translateY(-7px);
-}
-
-.category-number {
-  color: var(--yellow);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 38px;
-  font-weight: 900;
-}
-
-.category-card h3 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 32px;
-  text-transform: uppercase;
-  margin-top: 22px;
-}
-
-.category-card p {
-  font-size: 12px;
-  color: var(--gray);
-  line-height: 1.8;
-  margin-top: 12px;
+.note{
+  color:#777;
+  font-size:10px;
+  text-align:center;
+  margin-top:22px;
 }
 
 /* FORMAT */
 
-.format {
-  background: #101010;
+.format{background:#101010}
+.format-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin-top:50px;
 }
-
-.format-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  margin-top: 55px;
+.format-card{
+  padding:27px 22px;
+  background:#191919;
+  border-top:3px solid var(--yellow);
 }
-
-.format-card {
-  padding: 27px 22px;
-  background: #191919;
-  border-top: 3px solid var(--yellow);
+.format-card .number{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:54px;
+  color:var(--yellow);
+  font-weight:900;
 }
+.format-card h3{font-size:14px;text-transform:uppercase;margin:12px 0}
+.format-card p{font-size:11px;color:var(--gray);line-height:1.8}
 
-.format-card .number {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 54px;
-  color: var(--yellow);
-  font-weight: 900;
-}
+/* JUDGES */
 
-.format-card h3 {
-  font-size: 14px;
-  text-transform: uppercase;
-  margin: 12px 0;
-}
-
-.format-card p {
-  font-size: 11px;
-  color: var(--gray);
-  line-height: 1.8;
-}
-
-/* EVENT */
-
-.event {
-  position: relative;
+.judges{
   background:
-    linear-gradient(90deg, #050505f5, #050505aa),
+    linear-gradient(90deg,#050505f5,#050505c9),
     url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1800&q=85')
-    center/cover fixed;
+    center/cover;
+}
+.judges-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:65px;
+  align-items:center;
+}
+.judge-points{margin-top:30px}
+.judge-point{
+  display:flex;
+  gap:15px;
+  margin-bottom:22px;
+  align-items:flex-start;
+}
+.judge-point .check{
+  color:var(--yellow);
+  font-size:21px;
+  font-weight:900;
+}
+.judge-point p{font-size:13px;color:#ccc;line-height:1.7}
+.judge-point strong{color:white}
+.judge-form{
+  background:#141414ed;
+  border:1px solid #ffffff25;
+  padding:35px;
+}
+.judge-form h3{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:36px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.judge-form>p{font-size:12px;color:var(--gray);margin-bottom:25px;line-height:1.7}
+
+/* FORMS */
+
+.field{margin-bottom:16px}
+.field label{
+  display:block;
+  color:#ccc;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.field input,.field select,.field textarea{
+  width:100%;
+  padding:14px;
+  background:#090909;
+  border:1px solid #ffffff25;
+  color:white;
+  outline:none;
+  font-size:13px;
+  border-radius:0;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--yellow);
+}
+.field textarea{resize:vertical;min-height:90px}
+.field select option{background:#111}
+.form-submit{width:100%;border:0;margin-top:5px}
+.form-note{font-size:10px;color:#888;line-height:1.6;margin-top:14px}
+
+/* VOLUNTEERS */
+
+.volunteers{background:#101010}
+.volunteer-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
+}
+.volunteer-image{
+  min-height:410px;
+  background:
+    linear-gradient(0deg,#0005,#0002),
+    url('https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&w=1100&q=85')
+    center/cover;
 }
 
-.event-content {
-  max-width: 650px;
-}
+/* PARTNERS */
 
-.event-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
-  margin-top: 38px;
+.partners{background:#090909}
+.partner-box{
+  margin-top:45px;
+  border:1px solid #ffffff25;
+  padding:50px 30px;
+  text-align:center;
+  background:#111;
 }
-
-.info-item {
-  border-left: 2px solid var(--yellow);
-  padding-left: 18px;
+.partner-box h3{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:36px;
+  text-transform:uppercase;
 }
-
-.info-item span {
-  color: #999;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.info-item strong {
-  display: block;
-  margin-top: 9px;
-  font-size: 15px;
+.partner-box p{
+  color:var(--gray);
+  font-size:13px;
+  line-height:1.8;
+  max-width:570px;
+  margin:15px auto 25px;
 }
 
 /* REGISTRATION */
 
-.registration {
-  text-align: center;
-  background: var(--yellow);
-  color: #080808;
+.registration{
+  text-align:center;
+  background:var(--yellow);
+  color:#080808;
 }
+.registration .section-label{color:#333}
+.registration .section-title span{color:white}
+.registration .section-text{color:#333;margin-left:auto;margin-right:auto}
+.registration .btn{margin-top:28px}
 
-.registration .section-label {
-  color: #333;
-}
+/* LOCATION */
 
-.registration .section-title span {
-  color: white;
+.event{
+  background:#101010;
 }
-
-.registration .section-text {
-  color: #333;
-  margin-left: auto;
-  margin-right: auto;
+.event-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
 }
-
-.registration .btn-primary {
-  background: #090909;
-  color: white;
-  margin-top: 30px;
+.event-info{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+  margin-top:35px;
 }
-
-.registration .btn-primary:hover {
-  background: #333;
+.info-item{
+  border-left:2px solid var(--yellow);
+  padding-left:16px;
 }
+.info-item span{
+  color:#999;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+.info-item strong{
+  display:block;
+  margin-top:9px;
+  font-size:14px;
+}
+.map-frame{
+  width:100%;
+  min-height:370px;
+  border:0;
+  filter:grayscale(1) contrast(1.1);
+}
+.map-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
 
 /* FAQ */
 
-.faq {
-  background: var(--black);
+.faq{background:var(--black)}
+.faq-list{max-width:800px;margin:45px auto 0}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-question{
+  width:100%;
+  padding:24px 0;
+  background:none;
+  border:none;
+  color:white;
+  font-size:14px;
+  font-weight:700;
+  text-align:left;
+  display:flex;
+  justify-content:space-between;
+  cursor:pointer;
 }
+.faq-question span{color:var(--yellow);font-size:20px}
+.faq-answer{
+  display:none;
+  padding:0 35px 25px 0;
+  color:var(--gray);
+  font-size:13px;
+  line-height:1.8;
+}
+.faq-item.active .faq-answer{display:block}
 
-.faq-list {
-  max-width: 800px;
-  margin: 45px auto 0;
-}
+/* CONTACT */
 
-.faq-item {
-  border-bottom: 1px solid #ffffff22;
-}
-
-.faq-question {
-  width: 100%;
-  padding: 24px 0;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 14px;
-  font-weight: 700;
-  text-align: left;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.faq-question span {
-  color: var(--yellow);
-  font-size: 20px;
-}
-
-.faq-answer {
-  display: none;
-  padding: 0 35px 25px 0;
-  color: var(--gray);
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-.faq-item.active .faq-answer {
-  display: block;
-}
+.contact{background:var(--yellow);color:#080808;text-align:center}
+.contact .section-label{color:#333}
+.contact .section-title span{color:white}
+.contact .section-text{color:#333;margin-left:auto;margin-right:auto}
+.contact .btn{margin-top:25px}
 
 /* FOOTER */
 
-footer {
-  background: #080808;
-  border-top: 1px solid #ffffff20;
-  padding: 55px 0 25px;
+footer{
+  background:#070707;
+  border-top:1px solid var(--line);
+  padding:55px 0 25px;
+}
+.footer-content{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+  padding-bottom:40px;
+}
+.footer-brand{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;
+  font-size:37px;
+}
+.footer-brand span{color:var(--yellow)}
+.footer-content p{
+  font-size:11px;
+  color:var(--gray);
+  line-height:1.8;
+}
+.footer-bottom{
+  border-top:1px solid var(--line);
+  padding-top:22px;
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  font-size:10px;
+  color:#777;
+}
+.footer-disclaimer{
+  color:#666;
+  font-size:9px;
+  line-height:1.7;
+  margin-top:20px;
+  max-width:850px;
 }
 
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-  padding-bottom: 40px;
+/* WHATSAPP */
+
+.whatsapp-float{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:90;
+  width:58px;
+  height:58px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:var(--yellow);
+  color:#080808;
+  border-radius:50%;
+  font-size:27px;
+  font-weight:900;
+  box-shadow:0 5px 25px #0008;
+  transition:.3s;
+}
+.whatsapp-float:hover{transform:scale(1.08)}
+
+/* ANIMATION */
+
+.reveal{
+  opacity:0;
+  transform:translateY(25px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
 }
 
-.footer-brand {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-size: 37px;
+/* RESPONSIVE */
+
+@media(max-width:950px){
+  .nav-links{gap:13px}
+  .nav-links a{font-size:9px}
+  .nav-button{font-size:9px;padding:12px}
 }
-
-.footer-brand span {
-  color: var(--yellow);
+@media(max-width:800px){
+  .navbar{height:70px}
+  .menu-toggle{display:block}
+  .nav-button{display:none}
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#090909;
+    padding:25px 5%;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:24px;
+    border-bottom:1px solid var(--line);
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:12px}
+  .hero{min-height:720px;height:90vh;background-position:60% center}
+  .hero h1{font-size:clamp(85px,20vw,135px);letter-spacing:-3px}
+  section{padding:80px 0}
+  .about-grid,.judges-grid,.volunteer-grid,.event-grid{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+  .about-image{min-height:350px}
+  .category-grid{grid-template-columns:1fr}
+  .format-grid{grid-template-columns:1fr 1fr}
+  .volunteer-image{min-height:300px}
+  .footer-content{flex-direction:column;align-items:flex-start}
 }
-
-.footer-content p {
-  font-size: 11px;
-  color: var(--gray);
-  line-height: 1.8;
-}
-
-.footer-bottom {
-  border-top: 1px solid #ffffff20;
-  padding-top: 22px;
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  font-size: 10px;
-  color: #777;
-}
-
-/* MOBILE */
-
-@media(max-width: 800px) {
-  .navbar {
-    height: 70px;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .hero {
-    min-height: 720px;
-    height: 90vh;
-    background-position: 60% center;
-  }
-
-  .hero h1 {
-    font-size: clamp(85px, 20vw, 135px);
-    letter-spacing: -3px;
-  }
-
-  .hero-bottom {
-    font-size: 8px;
-    letter-spacing: 1px;
-  }
-
-  section {
-    padding: 80px 0;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .about-image {
-    min-height: 350px;
-  }
-
-  .category-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .format-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .event {
-    background-attachment: scroll;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-@media(max-width: 480px) {
-  .highlights-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .format-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .event-info {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-subtitle {
-    font-size: 12px;
-    max-width: 310px;
-  }
-
-  .hero-bottom {
-    bottom: 25px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-  }
+@media(max-width:480px){
+  .highlights-grid{grid-template-columns:1fr;gap:25px}
+  .format-grid{grid-template-columns:1fr}
+  .event-info{grid-template-columns:1fr}
+  .hero-subtitle{font-size:12px;max-width:310px}
+  .hero-bottom{bottom:25px;font-size:8px;letter-spacing:1px}
+  .judge-form{padding:23px}
+  .footer-bottom{flex-direction:column}
+  .map-frame{min-height:300px}
 }
 </style>
 </head>
@@ -686,29 +664,29 @@ footer {
       <span>ARAÇATUBA · 2027</span>
     </a>
 
-    <nav class="nav-links">
+    <nav class="nav-links" id="navLinks">
       <a href="#sobre">O evento</a>
       <a href="#categorias">Categorias</a>
       <a href="#formato">Desafio</a>
+      <a href="#judges">Judges</a>
+      <a href="#parceiros">Parceiros</a>
       <a href="#local">Local</a>
     </nav>
 
-    <a href="#inscricoes" class="nav-button">Inscrições</a>
+    <a href="#inscricoes" class="nav-button">Participar</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
   </div>
 </header>
 
 <main>
 
 <!-- HERO -->
+
 <section class="hero" id="inicio">
   <div class="container hero-content">
     <div class="eyebrow">CrossFit Araçatuba apresenta</div>
 
-    <h1>
-      HYROX
-      <span>GAMES</span>
-      2027
-    </h1>
+    <h1>HYROX<span>GAMES</span>2027</h1>
 
     <p class="hero-subtitle">
       Não é apenas sobre chegar ao final.
@@ -717,88 +695,76 @@ footer {
     </p>
 
     <div class="hero-buttons">
-      <a href="#inscricoes" class="btn btn-primary">
-        Quero participar →
-      </a>
-
-      <a href="#sobre" class="btn btn-outline">
-        Conheça o evento
-      </a>
+      <a href="#inscricoes" class="btn btn-primary">Quero participar →</a>
+      <a href="#sobre" class="btn btn-outline">Conheça o evento</a>
     </div>
   </div>
 
   <div class="hero-bottom">
     <span>Um desafio. Uma experiência. Seus limites.</span>
-    <span>01 / 2027</span>
+    <span>2027 · Araçatuba</span>
   </div>
 </section>
 
 <!-- ABOUT -->
+
 <section class="about" id="sobre">
   <div class="container about-grid">
-
-    <div>
+    <div class="reveal">
       <div class="section-label">Muito além da competição</div>
-
-      <h2 class="section-title">
-        O desafio<br>
-        começa <span>aqui.</span>
-      </h2>
+      <h2 class="section-title">O desafio<br>começa <span>aqui.</span></h2>
 
       <p class="section-text">
-        O HYROX GAMES 2027 chega ao CrossFit Araçatuba
-        para reunir atletas, apaixonados por movimento
-        e pessoas dispostas a superar seus próprios limites.
+        O HYROX GAMES 2027 chega a Araçatuba para reunir
+        atletas, apaixonados por movimento e pessoas dispostas
+        a superar seus próprios limites.
 
         Uma experiência que combina força, condicionamento,
         estratégia e resistência.
 
-        Prepare-se para viver um evento que vai muito
-        além do resultado.
+        Mais do que uma disputa, queremos construir um evento
+        que valorize o esporte, a comunidade e a superação.
+      </p>
+
+      <p class="section-text">
+        Uma realização do CrossFit Araçatuba, com uma equipe
+        preparada para transformar cada etapa em uma experiência
+        inesquecível.
       </p>
     </div>
 
-    <div class="about-image">
+    <div class="about-image reveal">
       <div class="image-tag">Seu próximo desafio</div>
     </div>
-
   </div>
 </section>
 
 <!-- HIGHLIGHTS -->
+
 <div class="highlights">
   <div class="container highlights-grid">
-
     <div class="highlight-item">
       <strong>01</strong>
       <span>Um grande desafio</span>
     </div>
-
     <div class="highlight-item">
       <strong>100%</strong>
       <span>Energia e superação</span>
     </div>
-
     <div class="highlight-item">
       <strong>2027</strong>
       <span>Uma nova experiência</span>
     </div>
-
   </div>
 </div>
 
 <!-- CATEGORIES -->
+
 <section class="categories" id="categorias">
   <div class="container">
-
-    <div class="center-heading">
+    <div class="center-heading reveal">
       <div class="section-label">Encontre seu desafio</div>
-
-      <h2 class="section-title">
-        Uma arena.<br>
-        <span>Várias possibilidades.</span>
-      </h2>
-
+      <h2 class="section-title">Uma arena.<br><span>Várias possibilidades.</span></h2>
       <p class="section-text">
         Escolha a categoria que combina com seu momento
         e prepare-se para entrar na arena.
@@ -806,184 +772,345 @@ footer {
     </div>
 
     <div class="category-grid">
-
-      <article class="category-card">
+      <article class="category-card reveal">
         <div class="category-number">01</div>
         <h3>Individual</h3>
         <p>Para quem quer encarar o desafio por conta própria.</p>
       </article>
 
-      <article class="category-card">
+      <article class="category-card reveal">
         <div class="category-number">02</div>
         <h3>Duplas</h3>
         <p>Compartilhe o esforço, a estratégia e a superação.</p>
       </article>
 
-      <article class="category-card">
+      <article class="category-card reveal">
         <div class="category-number">03</div>
         <h3>Iniciantes</h3>
         <p>Uma oportunidade para viver sua primeira experiência competitiva.</p>
       </article>
-
     </div>
-    <p style="color:#777;font-size:10px;margin-top:20px;text-align:center">
+
+    <p class="note">
       Categorias ilustrativas. A divisão oficial será divulgada pela organização.
     </p>
   </div>
 </section>
 
 <!-- FORMAT -->
+
 <section class="format" id="formato">
   <div class="container">
-
     <div class="section-label">Prepare-se para a arena</div>
-
-    <h2 class="section-title">
-      Corpo e mente.<br>
-      <span>Em movimento.</span>
-    </h2>
+    <h2 class="section-title">Corpo e mente.<br><span>Em movimento.</span></h2>
 
     <p class="section-text">
       Cada etapa exigirá estratégia, controle e determinação.
-      O formato oficial, as estações e as regras serão
-      divulgados pela organização.
+      O formato oficial, as estações, os movimentos e as regras
+      serão divulgados pela organização.
     </p>
 
     <div class="format-grid">
-
-      <div class="format-card">
+      <div class="format-card reveal">
         <div class="number">01</div>
         <h3>Resistência</h3>
         <p>Supere a distância e mantenha o ritmo.</p>
       </div>
 
-      <div class="format-card">
+      <div class="format-card reveal">
         <div class="number">02</div>
         <h3>Força</h3>
         <p>Enfrente desafios que exigem potência e controle.</p>
       </div>
 
-      <div class="format-card">
+      <div class="format-card reveal">
         <div class="number">03</div>
         <h3>Estratégia</h3>
         <p>Administre sua energia e faça cada movimento valer.</p>
       </div>
 
-      <div class="format-card">
+      <div class="format-card reveal">
         <div class="number">04</div>
         <h3>Superação</h3>
         <p>Descubra o que acontece quando você decide não desistir.</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- EVENT LOCATION -->
-<section class="event" id="local">
-  <div class="container event-content">
+<!-- JUDGES -->
 
-    <div class="section-label">O palco do desafio</div>
+<section class="judges" id="judges">
+  <div class="container judges-grid">
 
-    <h2 class="section-title">
-      Nos vemos<br>
-      na <span>arena.</span>
-    </h2>
+    <div class="reveal">
+      <div class="section-label">Faça parte da equipe</div>
 
-    <p class="section-text">
-      O CrossFit Araçatuba será o ponto de encontro
-      de atletas e pessoas que compartilham a paixão
-      por movimento, performance e superação.
-    </p>
+      <h2 class="section-title">
+        Seja um<br><span>Judge.</span>
+      </h2>
 
-    <div class="event-info">
+      <p class="section-text">
+        Uma competição de verdade precisa de pessoas comprometidas
+        com a excelência, a organização e a integridade esportiva.
+      </p>
 
-      <div class="info-item">
-        <span>Local</span>
-        <strong>CrossFit Araçatuba</strong>
+      <p class="section-text">
+        Estamos formando nossa equipe de arbitragem.
+        Se você gosta do esporte, tem atenção aos detalhes
+        e quer viver a competição de outro ângulo,
+        queremos conhecer você.
+      </p>
+
+      <div class="judge-points">
+        <div class="judge-point">
+          <span class="check">✓</span>
+          <p><strong>Contagem de repetições:</strong> acompanhar e registrar a execução dos movimentos.</p>
+        </div>
+
+        <div class="judge-point">
+          <span class="check">✓</span>
+          <p><strong>Padrões de movimento:</strong> observar o cumprimento das regras estabelecidas.</p>
+        </div>
+
+        <div class="judge-point">
+          <span class="check">✓</span>
+          <p><strong>Organização:</strong> contribuir para uma competição justa e bem conduzida.</p>
+        </div>
+
+        <div class="judge-point">
+          <span class="check">✓</span>
+          <p><strong>Trabalho em equipe:</strong> fazer parte dos bastidores de um grande evento.</p>
+        </div>
       </div>
+    </div>
 
-      <div class="info-item">
-        <span>Ano</span>
-        <strong>2027</strong>
-      </div>
+    <div class="judge-form reveal">
+      <h3>Quero ser um Judge</h3>
+      <p>Preencha seus dados. Nossa organização receberá sua candidatura pelo WhatsApp.</p>
 
-      <div class="info-item">
-        <span>Data</span>
-        <strong>Em breve</strong>
-      </div>
+      <form class="whatsapp-form" data-subject="Candidatura para Judge">
+        <div class="field">
+          <label for="judgeName">Nome completo</label>
+          <input id="judgeName" name="Nome" required placeholder="Seu nome">
+        </div>
 
-      <div class="info-item">
-        <span>Endereço</span>
-        <strong>Araçatuba – SP</strong>
-      </div>
+        <div class="field">
+          <label for="judgeAge">Idade</label>
+          <input id="judgeAge" name="Idade" type="number" min="18" required placeholder="Sua idade">
+        </div>
 
+        <div class="field">
+          <label for="judgeCity">Cidade</label>
+          <input id="judgeCity" name="Cidade" required placeholder="Sua cidade">
+        </div>
+
+        <div class="field">
+          <label for="judgePhone">Telefone</label>
+          <input id="judgePhone" name="Telefone" type="tel" required placeholder="(00) 00000-0000">
+        </div>
+
+        <div class="field">
+          <label for="judgeExperience">Experiência com competições</label>
+          <select id="judgeExperience" name="Experiência" required>
+            <option value="">Selecione</option>
+            <option>Já fui Judge</option>
+            <option>Já participei de competições</option>
+            <option>Tenho experiência com CrossFit</option>
+            <option>Não tenho experiência, mas quero aprender</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="judgeMessage">Conte um pouco sobre você</label>
+          <textarea id="judgeMessage" name="Mensagem" placeholder="Disponibilidade, experiências e outras informações..."></textarea>
+        </div>
+
+        <button class="btn btn-primary form-submit" type="submit">
+          Enviar candidatura →
+        </button>
+
+        <p class="form-note">
+          Ao enviar, você abrirá uma conversa no WhatsApp da organização
+          com os dados preenchidos. A candidatura não garante seleção.
+        </p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- VOLUNTEERS -->
+
+<section class="volunteers" id="voluntarios">
+  <div class="container volunteer-grid">
+    <div class="volunteer-image reveal"></div>
+
+    <div class="reveal">
+      <div class="section-label">Nos bastidores da experiência</div>
+      <h2 class="section-title">Faça parte<br>desse <span>time.</span></h2>
+
+      <p class="section-text">
+        Um grande evento acontece porque existem pessoas
+        que acreditam nele. Estamos buscando voluntários
+        para contribuir com a organização, recepção,
+        apoio aos atletas e estrutura do evento.
+      </p>
+
+      <p class="section-text">
+        Quer participar dessa experiência mesmo fora da arena?
+        Seu lugar também pode ser aqui.
+      </p>
+
+      <a href="https://wa.me/5518981969301?text=Ol%C3%A1!%20Tenho%20interesse%20em%20ser%20volunt%C3%A1rio%20no%20HYROX%20GAMES%202027."
+         target="_blank" rel="noopener" class="btn btn-primary">
+        Quero ser voluntário →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+
+<section class="partners" id="parceiros">
+  <div class="container">
+    <div class="center-heading reveal">
+      <div class="section-label">Marcas que fazem acontecer</div>
+      <h2 class="section-title">Seja um <span>parceiro.</span></h2>
+      <p class="section-text">
+        Conecte sua marca a uma experiência que reúne esporte,
+        comunidade, performance e superação.
+      </p>
+    </div>
+
+    <div class="partner-box reveal">
+      <h3>Sua marca na arena.</h3>
+      <p>
+        Estamos abertos a parcerias e patrocínios para construir
+        uma experiência ainda maior. Entre em contato com a
+        organização e conheça as possibilidades de participação.
+      </p>
+
+      <a href="https://wa.me/5518981969301?text=Ol%C3%A1!%20Tenho%20interesse%20em%20ser%20patrocinador%20ou%20parceiro%20do%20HYROX%20GAMES%202027."
+         target="_blank" rel="noopener" class="btn btn-primary">
+        Quero ser patrocinador →
+      </a>
     </div>
   </div>
 </section>
 
 <!-- REGISTRATION -->
-<section class="registration" id="inscricoes">
 
+<section class="registration" id="inscricoes">
   <div class="container">
     <div class="section-label">Sua hora vai chegar</div>
 
-    <h2 class="section-title">
-      Você está<br>
-      <span>preparado?</span>
-    </h2>
+    <h2 class="section-title">Você está<br><span>preparado?</span></h2>
 
     <p class="section-text">
-      As inscrições e informações oficiais serão
-      divulgadas em breve. Acompanhe as novidades
-      e prepare-se para fazer parte dessa experiência.
+      As inscrições e informações oficiais serão divulgadas
+      em breve. Entre em contato com a organização para receber
+      novidades sobre categorias, valores e abertura das vagas.
     </p>
 
-    <a href="https://www.instagram.com/crossfitaracatuba/"
-       target="_blank"
-       rel="noopener"
-       class="btn btn-primary">
-      Acompanhar novidades →
+    <a href="https://wa.me/5518981969301?text=Ol%C3%A1!%20Quero%20receber%20informa%C3%A7%C3%B5es%20sobre%20as%20inscri%C3%A7%C3%B5es%20do%20HYROX%20GAMES%202027."
+       target="_blank" rel="noopener" class="btn btn-dark">
+      Tenho interesse em competir →
     </a>
   </div>
+</section>
 
+<!-- LOCATION -->
+
+<section class="event" id="local">
+  <div class="container event-grid">
+    <div class="reveal">
+      <div class="section-label">O palco do desafio</div>
+
+      <h2 class="section-title">Nos vemos<br>na <span>arena.</span></h2>
+
+      <p class="section-text">
+        O CrossFit Araçatuba será o ponto de encontro de atletas,
+        equipes e pessoas que compartilham a paixão por movimento,
+        performance e superação.
+      </p>
+
+      <div class="event-info">
+        <div class="info-item">
+          <span>Organização</span>
+          <strong>CrossFit Araçatuba</strong>
+        </div>
+
+        <div class="info-item">
+          <span>Ano</span>
+          <strong>2027</strong>
+        </div>
+
+        <div class="info-item">
+          <span>Data</span>
+          <strong>Em breve</strong>
+        </div>
+
+        <div class="info-item">
+          <span>Endereço</span>
+          <strong>Rua Fernando Costa, 306</strong>
+        </div>
+      </div>
+
+      <div class="map-actions">
+        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Fernando+Costa%2C+306%2C+Ara%C3%A7atuba%2C+SP"
+           target="_blank" rel="noopener" class="btn btn-primary">
+          Como chegar →
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <iframe
+        class="map-frame"
+        title="Localização do CrossFit Araçatuba"
+        src="https://maps.google.com/maps?q=Rua%20Fernando%20Costa%2C%20306%2C%20Ara%C3%A7atuba%2C%20SP&t=&z=16&ie=UTF8&iwloc=&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
 </section>
 
 <!-- FAQ -->
-<section class="faq">
-  <div class="container">
 
+<section class="faq" id="faq">
+  <div class="container">
     <div class="center-heading">
       <div class="section-label">Tire suas dúvidas</div>
       <h2 class="section-title">Perguntas <span>frequentes.</span></h2>
     </div>
 
     <div class="faq-list">
-
       <div class="faq-item">
-        <button class="faq-question">
+        <button class="faq-question" aria-expanded="false">
           Quando acontecerá o evento?
           <span>+</span>
         </button>
         <div class="faq-answer">
-          O HYROX GAMES será realizado em 2027.
-          A data oficial será anunciada em breve.
+          O evento será realizado em 2027. A data oficial
+          será anunciada pela organização.
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">
+        <button class="faq-question" aria-expanded="false">
           Preciso ser atleta de CrossFit?
           <span>+</span>
         </button>
         <div class="faq-answer">
-          Não necessariamente. As condições de participação
-          e categorias serão apresentadas no regulamento oficial.
+          As condições de participação e categorias serão
+          apresentadas no regulamento oficial.
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">
+        <button class="faq-question" aria-expanded="false">
           Como faço minha inscrição?
           <span>+</span>
         </button>
@@ -994,34 +1121,76 @@ footer {
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">
+        <button class="faq-question" aria-expanded="false">
+          Como faço para ser Judge?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          Você pode preencher o formulário de candidatura
+          nesta página. A equipe da organização entrará
+          em contato para informar as próximas etapas.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
           Onde será realizado?
           <span>+</span>
         </button>
         <div class="faq-answer">
-          No CrossFit Araçatuba, em Araçatuba, São Paulo.
+          No CrossFit Araçatuba, Rua Fernando Costa, 306,
+          Araçatuba, São Paulo.
         </div>
       </div>
 
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Como posso patrocinar o evento?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          Entre em contato com a organização pelo WhatsApp
+          através da seção de parceiros desta página.
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contato">
+  <div class="container">
+    <div class="section-label">Fale com a organização</div>
+    <h2 class="section-title">Vamos fazer<br><span>acontecer?</span></h2>
+
+    <p class="section-text">
+      Dúvidas, informações, parcerias ou interesse em participar?
+      Nossa equipe está à disposição.
+    </p>
+
+    <a href="https://wa.me/5518981969301?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20organiza%C3%A7%C3%A3o%20do%20HYROX%20GAMES%202027."
+       target="_blank" rel="noopener" class="btn btn-dark">
+      Falar com a organização →
+    </a>
   </div>
 </section>
 
 </main>
 
 <!-- FOOTER -->
+
 <footer>
   <div class="container">
-
     <div class="footer-content">
       <div class="footer-brand">
-        HYROX <span>GAMES</span><br>
-        2027
+        HYROX <span>GAMES</span><br>2027
       </div>
 
       <p>
         Uma experiência de força, resistência e superação.<br>
-        Realização: CrossFit Araçatuba.
+        Realização: CrossFit Araçatuba.<br>
+        Araçatuba — São Paulo.
       </p>
     </div>
 
@@ -1030,11 +1199,77 @@ footer {
       <span>FEITO PARA QUEM NÃO PARA.</span>
     </div>
 
+    <p class="footer-disclaimer">
+      Evento independente organizado pelo CrossFit Araçatuba.
+      Não é apresentado como evento oficial ou licenciado pela HYROX.
+      O uso comercial do nome e de elementos de marca de terceiros
+      deve observar as respectivas autorizações e direitos.
+    </p>
   </div>
 </footer>
 
+<!-- WHATSAPP FIXO -->
+
+<a class="whatsapp-float"
+   href="https://wa.me/5518981969301?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20HYROX%20GAMES%202027."
+   target="_blank"
+   rel="noopener"
+   aria-label="Falar com a organização pelo WhatsApp">
+  W
+</a>
+
 <script>
+
+// MENU MOBILE
+
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  menuToggle.textContent = open ? '×' : '☰';
+  menuToggle.setAttribute('aria-expanded', String(open));
+});
+
+document.querySelectorAll('#navLinks a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.textContent = '☰';
+    menuToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+// FORMULÁRIO DE JUDGES PELO WHATSAPP
+
+const organizationNumber = '5518981969301';
+
+document.querySelectorAll('.whatsapp-form').forEach(form => {
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    const data = new FormData(form);
+    const subject = form.dataset.subject || 'Contato';
+
+    let message = `Olá! Tenho interesse: ${subject}.\n\n`;
+
+    for (const [key, value] of data.entries()) {
+      if (value.trim()) {
+        message += `${key}: ${value}\n`;
+      }
+    }
+
+    message += '\nMensagem enviada pelo site HYROX GAMES 2027.';
+
+    const url = `https://wa.me/${organizationNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, '_blank', 'noopener,noreferrer');
+  });
+});
+
 // FAQ INTERATIVO
+
 document.querySelectorAll('.faq-question').forEach(button => {
   button.addEventListener('click', () => {
     const item = button.parentElement;
@@ -1042,33 +1277,33 @@ document.querySelectorAll('.faq-question').forEach(button => {
 
     document.querySelectorAll('.faq-item').forEach(faq => {
       faq.classList.remove('active');
+      faq.querySelector('button').setAttribute('aria-expanded', 'false');
       faq.querySelector('span').textContent = '+';
     });
 
     if (!active) {
       item.classList.add('active');
+      button.setAttribute('aria-expanded', 'true');
       button.querySelector('span').textContent = '−';
     }
   });
 });
 
-// ENTRADA SUAVE DAS SEÇÕES
+// ANIMAÇÕES DE ENTRADA
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
+      entry.target.classList.add('visible');
       observer.unobserve(entry.target);
     }
   });
 }, { threshold: 0.12 });
 
-document.querySelectorAll('.category-card, .format-card').forEach(card => {
-  card.style.opacity = '0';
-  card.style.transform = 'translateY(25px)';
-  card.style.transition = 'opacity .7s ease, transform .7s ease';
-  observer.observe(card);
+document.querySelectorAll('.reveal').forEach(element => {
+  observer.observe(element);
 });
+
 </script>
 
 </body>
